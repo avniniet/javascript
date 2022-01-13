@@ -2,7 +2,8 @@ let js = 'amazing';//**Learing**Semicolon is not mendatory but it is good practi
     if(js === 'amazing'){
       alert('Javascript is fun');
     }
-   40+8+23-10;//**Learing**Since we have not told js, where to show this result so this will not be at this moment this will not be visible anywhere on page
+   40+8+23-10;/**Learing**Since we have not told js, where to show this result so this will not 
+   be at this moment this will not be visible anywhere on page*/
  console.log(40+8+23-10);//**Learning**Here we told js  to show result of this calculation on console
 
  console.log(23);//**Learning** telling js to print on consol
@@ -86,3 +87,147 @@ console.log(firstNameOfBhanu + " "+lastNameOfBhanu);
 let x = 10;
 x += 5; /**learning** it means x=x+5 */
 console.log(x);
+
+
+
+/********************************************String & Template literal*********** */
+console.log("Starting String and template literal");
+const firstNameNeetish = "Neetish";
+const jobNeetish = "Bank Manager";
+const birthYearNeetish = 1991;
+const currentYear = 2022;
+const message = "I'm "+ firstNameNeetish + ", a "+ (currentYear - birthYearNeetish) + " years old "+ jobNeetish ;
+console.log(message);
+console.log('String with \n\
+multiple \n\
+lines');
+
+//template literal 
+ /**Learning** in String template literal we use back ticks ``.
+ It is ES6 feature */
+const messageUsingTemplateLiteral = `Hi All I'm ${firstNameNeetish} , a ${currentYear - birthYearNeetish} years old  ${jobNeetish}`;
+console.log(messageUsingTemplateLiteral);
+console.log(`I am Bank Manager in Bank of Maharastra`);
+console.log(`String with
+multiple 
+line using template `);
+
+
+/***********************************If/Elese**********************************************************/
+const currentAgeOfAshish =17;
+const requiredAgeForDrivingLicence = 18;
+const isOldEnough = currentAgeOfAshish >= requiredAgeForDrivingLicence;
+if( isOldEnough){
+  console.log(`Ashish is eligible for getting driving licence`);
+}
+else{
+  console.log(`Ashish is not eligible for getting driving licence he should wait for ${requiredAgeForDrivingLicence - currentAgeOfAshish} more year`);
+}
+
+
+/***********************************Type Conversion and Coersion**********/
+/**Learning**Type conversion is when we manually convert one type into other */
+/**Learning**Type coersion is when javascript convert type internally  */
+
+//Type conversion
+const inputYear = '1991';
+/*If we will do adding in this input year then instead of adding string concatanation 
+will happen*/
+console.log(inputYear +18);//output 199118
+console.log(Number(inputYear) + 18);//output 2009
+/**Learning** if string does not contain number then we after converting 
+ that into no we will get NaN. typeof NaN is number but it is invalid number */
+console.log(Number('Avnish'));//output NaN (Not a number)
+console.log(typeof Number('Avnish'));//Output number
+
+//Type coersion
+console.log('I am '+23 +' years old');//JS will internally convert 23 into string.
+console.log('23' - '10');//output is 10
+console.log(typeof ('23' - '10'));//number
+console.log('23' + '10' + 3 ); //23103. Because  + is concatanation operator
+
+let n = '1' + 1;
+n = n-1;
+console.log(n)//output is 10. First value of n becomes '11' and when we substract 1 from this string literal it converted into 11 internally by JS   
+
+
+/**************************************truthy and falsy valie********************************************/
+/**Learning** there are 5 falsy values 0, '', undefined,null, NaN. By default these are not false but converted
+ * into boolean they take false value.
+ * 
+ * Similerly any no which is not 0 or any string which is not empty will be converted into true when converted
+ * into boolean
+ */
+console.log("Starting of truthy and falsy section");
+console.log(`boolean of 0 ${Boolean(0)}`);//false
+console.log(`boolean of undefined${Boolean(undefined)}`);//false
+console.log(`booean of empty string ${Boolean('')}`);//false
+console.log(`boolean of NaN ${Boolean(NaN)}`);//false
+console.log(` boolean of non empty string ${Boolean('Avnish')}`);//true
+console.log(` boolean of empty object ${Boolean({})}`);/**Learning** when empty object
+ is converted into boolean then it takes true value */
+
+
+const money = 0;
+if(money){/**Learning** here `coersion` happens where 0 is converted into boolean value.
+  Since its boolean value is false so it will go into else block */
+  console.log(`Since I have money now so we can make our life luxirious`);
+}
+else{
+  console.log(`I dont have any money so stop your expenduture`);
+}
+const personCount =1;
+if(personCount){
+  console.log(`at least someone is there`);
+}else{
+  console.log(`It is sad to say that no one came`);
+}
+
+//use truthy and falsy to check value is defined or not
+let height;
+console.log(`type of height ${typeof(height)}`);
+if(height){/**Learning**since height is not defined so it will be false on
+   coersion into boolean. Problem with this approach is that even if height is 0
+   it will be taken as false value because boolean of 0 is also false. For that case
+   we need to go for equality operator. */
+  console.log(`height is defined`);
+}else{
+  console.log(`height is not defined`);
+}
+
+
+
+/******************************Equality operator*********************************/
+/**Learning** `===` is called strict equality operator. It is scrict because it
+ * does not do type coersion and returns true only if value at both end are same.
+ * 
+ * `==` loose equality operator. It does type coersion.
+ * 
+ * Similarly `!==` is strict version and `!=` is loose version
+ * 
+ * As a general rule for JS coding avoid loose equality as much as possible.
+ */
+
+
+console.log(`Starting of equality operator`);
+console.log(`${'18' === 18}`);/*false. Since `===` do not does type coersion so string
+ is compared with number and it returnes false.*/
+ console.log(`${'18' == 18}`);/*true. Since `==` does type coersion. First '18' is converted into number */
+const equalitySectionAgeVar =18;
+if(equalitySectionAgeVar === 18){
+  console.log(`Since age is ${equalitySectionAgeVar} so he/she is eligible for voting`);
+}
+
+
+const valueFromUI = prompt(`What is your favourate value`);/**Learning** prompt is function to collect value from UI */
+console.log(valueFromUI);
+console.log(typeof(valueFromUI));//string
+
+if(valueFromUI == 23){/*Loose equality. valueFromUI is string and compared with number so `==` coersion 
+will take place and if value entered is 23 so it is true. If instead of `==` if there is `===` they coersion 
+will not take place so even user entered 23, since there is type difference so comparision will return false*/
+ 
+console.log(`You entered 23`);
+
+}
+
