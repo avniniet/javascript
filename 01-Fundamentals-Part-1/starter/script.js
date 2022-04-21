@@ -1,3 +1,30 @@
+/**Learning**javascript is high-level, object oriented, multiparadigm programming language
+ * High Level: During writting code in this language we dont need to go for low level
+ * management like mamory management and etc
+ * 
+ * Object Oriented: Language is mostly based on concept of object for storing most kind of data
+ * 
+ * Multi-paradigm: Javascript is so flexible that we can use different coding styles
+ * like imperative or declarative programming style. These difference styles are way of 
+ * stucturing your code 
+ */
+
+
+/**Learning**
+ * HTML: responsible for concept of page. Noun
+ * CSS: responsible for presentation of page. Adjective
+ * Javascript: programming language of internet. Verb
+ * 
+ * 
+ * We can run javascript outside web browser ie web server using nodeJS so in this way
+ * this allowes to create backend code
+ * 
+ * When we write code to run in browser then it is called  frontend code
+ * 
+ * We can also use javascript to write native mobile application as well native desktop
+ * application
+ */
+
 let js = 'amazing';//**Learing**Semicolon is not mendatory but it is good practice to write it at the end of line
     if(js === 'amazing'){
       alert('Javascript is fun');
@@ -203,7 +230,7 @@ if(height){/**Learning**since height is not defined so it will be false on
  * 
  * `==` loose equality operator. It does type coersion.
  * 
- * Similarly `!==` is strict version and `!=` is loose version
+ * Similarly `!==` is strict version and `!=` is loose version  
  * 
  * As a general rule for JS coding avoid loose equality as much as possible.
  */
