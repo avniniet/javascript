@@ -2,7 +2,8 @@
  * High Level: During writting code in this language we dont need to go for low level
  * management like mamory management and etc
  * 
- * Object Oriented: Language is mostly based on concept of object for storing most kind of data
+ * Object Oriented: Language is mostly based on concept of object for storing most
+ *  kind of data
  * 
  * Multi-paradigm: Javascript is so flexible that we can use different coding styles
  * like imperative or declarative programming style. These difference styles are way of 
@@ -10,55 +11,72 @@
  */
 
 
-/**Learning**
- * HTML: responsible for concept of page. Noun
- * CSS: responsible for presentation of page. Adjective
+/**Learning**3 core technologies of web
+ * HTML: responsible for content of page. Noun
+ * CSS: responsible for presentation of content. Adjective
  * Javascript: programming language of internet. Verb
  * 
  * 
  * We can run javascript outside web browser ie web server using nodeJS so in this way
- * this allowes to create backend code
- * 
+ * this allowes to create backend code. For ruunning node code we don't need web browser.
+  * 
  * When we write code to run in browser then it is called  frontend code
  * 
  * We can also use javascript to write native mobile application as well native desktop
  * application
  */
+/**Learning** a value is actually piece of data which is most fundamental unit of data in programming.
+ * We can store values in variables.
+ */
 
-let js = 'amazing';//**Learing**Semicolon is not mendatory but it is good practice to write it at the end of line
+let js = 'amazing';/**Learing**Semicolon is not mendatory but it is good practice to write it at
+ the end of line*/
     if(js === 'amazing'){
       alert('Javascript is fun');
     }
-   40+8+23-10;/**Learing**Since we have not told js, where to show this result so this will not 
-   be at this moment this will not be visible anywhere on page*/
+   40+8+23-10;/**Learing**Since we have not told js, where to show this result
+    so this will not   be at this moment this will not be visible anywhere on page*/
  console.log(40+8+23-10);//**Learning**Here we told js  to show result of this calculation on console
 
  console.log(23);//**Learning** telling js to print on consol
 
-/**Learning** every value in javascript is either primitive or object */
-
- let firstName = "Avnish";
+ let firstName = "Avnish";/**Learning** declaring variable */
  console.log(firstName);
 //--------------------DataType-------------------------------------------------------
- /**Learning** 7 Primitive data type: Numer, String, Boolean, Undefined(value taken by variable is not yet defined) 
-  *, Null(empty value), Symbol(value that is unique and can not be changed),
-    BigInt(Larger integer than number type can hold).
+ 
 
+/**Learning** every value in javascript is either primitive or object. */
+
+/**Learning** 7 Primitive data type: Number(used for floating point or integer),
+ *  String(sequence of character no matter in single of double quote),
+ *  Boolean(values of this datatype can be true or false),
+ *  Undefined(value taken by variable is not yet defined) ,
+ *  Null(empty value), 
+ * Symbol(value that is unique and can not be changed. It was introduced from ES2015),
+    BigInt(Larger integer than number type can hold. It was introduced from ES2020).
+         In Javascript no integer and decimal datatype only number data type
 
  */
 
 /**Learning** Javascript has dynamic typing. We do not have to manually define data
  * type of the value stored in variable. Instead data types are determined automatically.
+ * Javascript determines data type on its own
+ * 
+ * In javascript, it is value which has datatype not variable. This give us flexibility that
+ * that we can assign value of different data type to same variable in future
+ *  let a = 10; 
+ *  a = "Avnish"; 
  */
-let javaSctiptIsFun = true;/**Learning**First time when we are declaring a variable 
-we use the keyword let**/
+
+/**Learning**First time when we are declaring a variable we use the keyword let**/
+let javaSctiptIsFun = true;
 console.log(javaSctiptIsFun);
 
-console.log(typeof true);/**Learning**typeof is operator to know datatype of a variable*/
-console.log(typeof javaSctiptIsFun);//boolean
-console.log(typeof 23);//number
-console.log(typeof 'Avnish');//string
-console.log(typeof "Avnish");//string
+console.log("type of true is "+typeof true);/**Learning**typeof is operator to know datatype of a variable*/
+console.log("type of javaScriptIsFun "+typeof javaSctiptIsFun);//boolean
+console.log("Type of 23 is "+typeof 23);//number
+console.log("Type of /'Avnish/' "+typeof 'Avnish');//string
+console.log("Type of Avnish in double quotes "+typeof "Avnish");//string
 /*console.log(typeof Avnish);**Learning**This will give error Avnish is not defined 
 because without any qoute it is considered as variable name which is not defined
 */
@@ -66,19 +84,19 @@ because without any qoute it is considered as variable name which is not defined
 javaSctiptIsFun = "New Value";/**Learing**Earlier this variable was containing boolean
 value but now we stored string value in it. So in javascript dynamic typing is present */
 
-console.log(typeof javaSctiptIsFun);//This time datatype of thid variable will be shown as string
+console.log("Type of javascriptIsFun after assigning it to new value "+typeof javaSctiptIsFun);//This time datatype of this variable will be shown as string
 
 
 let year;/**Learning** Here value contained by variable is undefined and its data type is also undefined */
-console.log(year);
-console.log(typeof year);
+console.log(year);/**Learning** value of variable is undefined */
+console.log(typeof year);/**Learning** type of variable is undefined */
 year =1991;
 console.log(year);
 console.log(typeof year);
 
-console.log(typeof null);//This will be printed as object and it is bug in javaScript typeof operator 
-/**Learing**we use let to declare variable which can mutate in future but value of const can not be changed */
-let age = 30;
+console.log(typeof null);/**Learning**This will be printed as object and it is bug in javaScript typeof operator */
+/**Learning**we use let to declare variable which can mutate in future but value of const can not be changed */
+let age = 30;/**Learning** let and const were introduced into ES6 while var keyword is old way of declaring variables */
 age = 31;//reassigning value to variable. This is called mutating variable
 
 const birthYear = 1991;
@@ -102,8 +120,8 @@ console.log(lastName);
 const now = 2037;
 const ageAvnish = now-1991;
 const ageNeetish = now-2018;
-console.log(ageAvnish);
-console.log(ageAvnish, ageNeetish);
+console.log("**Operators**Age of avnish"+ageAvnish);
+console.log("**Operators**Age of avnish"+ageAvnish+", age of Neetish"+   ageNeetish);
 
 console.log(ageAvnish*2, ageNeetish/2, 2**3);/**Learning** 2**3 means 2 to the power 3 */
 const firstNameOfBhanu = 'Bhuwaneshwar';
@@ -114,6 +132,8 @@ console.log(firstNameOfBhanu + " "+lastNameOfBhanu);
 let x = 10;
 x += 5; /**learning** it means x=x+5 */
 console.log(x);
+
+//Comperision Operator
 
 
 
