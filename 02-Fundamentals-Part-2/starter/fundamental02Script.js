@@ -104,3 +104,78 @@ function cutFruitIntoPieces(fruit){
     return fruit*4;
 
 }
+
+
+/**************************************Array**************************** */
+/**Learing**two most important datastructure in js is array and object */
+const friend1 = 'Neetish';
+const friend2 = 'Bhanu';
+const friend3 = 'Suraj';
+
+const friends = ['Neetish', 'Bhanu', 'Suraj'];
+console.log(`**Array**printing friends array content ${friends}`);
+
+const years =  new Array(1991, 1992, 1993, 2008, 2020, 2022);
+console.log(`**Array**printing years array content = ${years}`);
+
+console.log(`**Array**printing first element of array years = ${years[0]}`);
+console.log(`**Array**printing second element of array years = ${years[1]}`);
+console.log(`**Array**printing length of array = ${years.length}`);/**Learning**length is property of array */
+console.log(`**Array**printing last element of array years = ${years[years.length-1]}`);/**Learning**Here we are putting expression in square bracket */
+
+
+friends[2] = 'Dheeru';/**Learning**Now 3rd element of friends array is replaced with Dheeru. Although
+array is declared as const even then we are able to update values in it becasue only premitive values
+declared by const are immutable and array is not an premitive value*/
+console.log(`**Array**printing updated friends array content ${friends}`);
+
+//friends = ['Anshul', 'Yogendra', 'Gyanu'];/**Learninf**This will fail because we are changing a const */
+
+/**Learning**Array can hold values of different types at same time */
+const myInfo = ['Avnish', 'Mishra', 1990, friends/**Putting an array into an array */];
+console.log(`**Array**printing array which containing my info= ${myInfo}`);
+
+//Exercise
+console.log(`**Array**Exercise passing values from array into anonymous function aand calculating age = ${calcAge(years[0])}`);
+console.log(`**Array**Exercise passing values from array into anonymous function aand calculating age = ${calcAge(years[1])}`);
+
+/****************************************************Array Methods************************************ */
+const countries = new Array();
+console.log(`**ArrayMethod** push function returns lenght of array ${countries.push('India')}`);/**Learning** This will add element at the end of the array and return length of array */
+console.log(`**ArrayMethod** printing array after pushing element into it. Countries = ${countries}`);
+countries.push(`China`);
+console.log(`**ArrayMethod** printing array after pushing element into it. Countries = ${countries}`);
+
+
+countries.unshift('USA');/**Learning**unshift method addes element at the starting of the array */
+console.log(`**ArrayMethod** unshift adds element at starting of array. ${countries}`);
+
+console.log(`**ArrayMethod** pop method returns popped element ${countries.pop()}`);/**Learning**pop method removes last element from the array and return popped element */
+console.log(`**ArrayMethod** pop method removed last element from the array ${countries}`);
+
+countries.pop();/**Learning**pop method removes last element from the array */
+console.log(`**ArrayMethod** pop method removed last element from the array ${countries}`);
+ 
+console.log(`**ArrayMethod** shift method returns removed element ${countries.shift()}`);/**Learning**shift method removes first element from the array and return removed element */
+console.log(`**ArrayMethod** shift method removes top element from the array ${countries}`);
+
+countries.push('India');
+console.log(`**ArrayMethod** index of method returns index of searched element and if element is not there in 
+array then it will return -1 so index of India is ${countries.indexOf('India')}`);
+
+
+const isIndiaInArray = countries.includes('India');/**Learning** includes returns true if element in 
+array otherwise false. includes method do scrict checking so type coersion implicitly does not happen.
+include is ES6 method */
+console.log(`**ArrayMethod** includes method of array returns boolean value depending if element is there in array or not. So Is india in array = ${isIndiaInArray}`)
+
+ /**************************************************Object*****************************************/
+ /**Learning** in array there is no way to identify elements by its properties but only by its index/position */
+ const personalDetails = {//Object declaration. This is simplest way of declaring object
+     firstName : `Avnish`,//Each of key is call properties
+     lastName : `Mishra`,
+     Job : `Software Engineer`,
+     friends : friends
+ };
+
+ console.log(`**Object**printing name of my friends = ${personalDetails.friends} and firstName = ${personalDetails.firstName}`);
