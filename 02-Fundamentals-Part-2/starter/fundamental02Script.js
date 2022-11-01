@@ -77,7 +77,8 @@ console.log('**Function**Anonymous Function**. Age by anonymous function=' + age
  * Arrow function does not get this keyword
  */
 
-const calcAgeByArrowFunction = (birthYear) /**This will work as parameter. In this arrow function there is only one parameter */ =>
+const calcAgeByArrowFunction = (birthYear) /**This will work as parameter. 
+In this arrow function there is only one parameter */ =>
   2022 - birthYear;
 console.log('**Function**ArrowFunction**ageByArrowFunction=' + calcAgeByArrowFunction(1991));
 
@@ -117,8 +118,8 @@ console.log(`**Array**printing years array content = ${years}`);
 console.log(`**Array**printing first element of array years = ${years[0]}`);
 console.log(`**Array**printing second element of array years = ${years[1]}`);
 console.log(`**Array**printing length of array = ${years.length}`); /**Learning**length is property of array */
-console.log(`**Array**printing last element of array years = ${years[years.length - 1]}`); /**Learning**Here we
- are putting expression in square bracket */
+console.log(`**Array**printing last element of array years = ${years[years.length - 1]}`); /**Learning**
+Here we are putting expression in square bracket */
 
 friends[2] = 'Dheeru'; /**Learning**Now 3rd element of friends array is replaced with Dheeru. Although
 array is declared as const even then we are able to update values in it becasue only premitive values
@@ -191,7 +192,8 @@ const nameKey = 'Name';
 console.log(`**Object**printing name of my friends using bracket notation= ${personalDetails['first' + nameKey]}
  and firstName = ${personalDetails['last' + nameKey]}`); /**Learning** in bracket notation we can use computed
   property name but same is not applicable for dot notation. In dot notation we need to use final property
-  name instead of computed property name. If we will try to access property which is not present then it will return undefined*/
+  name instead of computed property name. If we will try to access property which is not present then it will
+   return undefined*/
 const interestedIn = prompt('What do you want to know about Avnish. Choose between firstName, lastName,job, friends');
 console.log(`**Object**printing object details of prompt property.
  Using dot notation. Dot notation will return undefined because personalDetails does not have property 
@@ -294,3 +296,35 @@ while (rollOfDice !== 6) {
 }
 
 console.log('Live server is active');
+
+/************************************live server***********************************/
+/**Learning** Adavantage of using live server
+ * 1. There is no need to manually reload browser to see changes it will automatically
+ * load changes in browser
+ *
+ * Ways to implement live server
+ * 1. Install extension called live server and nothing else
+ * 2. Install live-server using npm
+ *    steps: node should be installed in system
+ *           using below npm command to install live-server
+ *           npm install live-server -g
+ */
+
+/**********************************How to code Lecture#57*************************/
+/**Learning**
+ * 1. Set a goal. specific, measurable, realistic and timebased
+ * 2. Type code instated of copy paste. In this way you can train your brain for syntax
+ * 3. Challenge yourself
+ * 4. Practice
+ * 5. You can't know everything
+ *
+ *
+ * ****How to solve problem***
+ * Stay calm and slow down. Don't jump at problem without a plan
+ * Four step solution for solving problem:
+ *  a. understand problem well. When you started asking write question then think you
+ *     are reaching right path of understanding problem.
+ *  b. Divide and conqure. Break big problem into smaller sub problems
+ *  c. Do as much research as you have to
+ *  d. write sudo code before writting actual code
+ */
