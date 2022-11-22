@@ -1,0 +1,28 @@
+/**Learning**Box model is fundamental part of css because it is one of main factor
+which decides how element are displayed on webpage and also how they are sized
+
+1. As per box model each and every element on webpage can be seen as box and each box
+can have width, height, padding, margins and border. Except width and height all are 
+optional
+
+2. Some elements has default margin.
+ */
+
+* {
+  /**Learning** global selector for all elements*/
+  box-sizing: border-box;
+}
+body {
+  background-color: blanchedalmond;
+  font-family: Arial;
+  padding: 50px;
+}
+
+.first {
+  color: darkred;
+}
+
+#your-name {
+  background-color: darkred;
+  border: 5px solid black;
+}

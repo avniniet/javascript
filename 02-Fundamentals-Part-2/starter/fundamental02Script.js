@@ -317,7 +317,7 @@ console.log('Live server is active');
  * 3. Challenge yourself
  * 4. Practice
  * 5. You can't know everything
- *
+ *    
  *
  * ****How to solve problem***
  * Stay calm and slow down. Don't jump at problem without a plan
@@ -328,3 +328,4 @@ console.log('Live server is active');
  *  c. Do as much research as you have to
  *  d. write sudo code before writting actual code
  */
+ 
