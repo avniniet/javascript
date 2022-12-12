@@ -69,7 +69,8 @@ const measureKelvin = function () {
     unit: "celcius",
     value: Number(prompt(`Degree Celcius`)),
   };
-  debugger; /**Learning**When we use debugger syntax then at this line code will automatially open debuggging tool in browser */
+  debugger; /**Learning**When we use debugger syntax then at this line code will automatially
+  open debuggging tool in browser */
   console.table(`**DeveloperSkill**Debugging**${measurement.value}`);
   const kelvin = measurement.value + 273;
   console.log(`**DeveloperSkill**debugging**kelvinValue = ${kelvin}`);

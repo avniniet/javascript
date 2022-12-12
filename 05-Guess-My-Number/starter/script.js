@@ -13,7 +13,7 @@ console.log(`Secret number is ${secretNumber}`);
 console.log(
   document.querySelector('.message').textContent
 ); /**Learning*querySelector() is method available on document 
-object. In this method we need to pass a selector and this selector would be same 
+object. In this method we need to pass a selector name and this selector would be same 
 as selector we use in css. Since message is a class in HTML file so we are using 
 '.' otherwise for id we would have used '#'*/
 
