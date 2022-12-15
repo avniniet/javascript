@@ -132,7 +132,7 @@ programming language
        arguments that are passed into the function that current execution context belongs to. Each function
        gets its own execution context as soon as it is called. So all variables which are declared inside
        function is end up in variable environment. A function can access variable declared out side function,
-       thi works because of 'scope chain'. Execution context contains scope chain which basically contains references 
+       this works because of 'scope chain'. Execution context contains scope chain which basically contains references 
        of variables which are located outside of current function and to keep track of scope chain it is stored
        in each execution context. Each context all get special variable called 'this' keyword. Content of execution
        context like variable environment, scope chain and this keyword is generated creation phase which occurs 
@@ -157,11 +157,81 @@ programming language
 
 
 
- */
+  */
 
 /**Learning** Scope and the scope chain**
+    Each execution environment has variable environment, scope chain and this keyword(in arrow function execution
+    environment there is no argument object in variable environment and no this keyword).
+       Scoping: 
+         It controls how out program's variables are organized and accessed. It answers like 'Where do variables live?'
+         and 'Where can we access certain variable and where we cant'.
+       Lexical Scoping:  Scoping is decided by placement of function and blocks in code in the code. For example
+         a function written inside a function has access variables of parent function.
+       Scope: Space or environment in which a certain variable is declared( variable environment in case of 
+        functions). There is Global scope, function scope and block scope. 
+       Scope of Variable: Region of our code where certain variable can be accessed. 
+
+      All above scope concepts like scope of variable , scope etc are not same. Many people use these concept
+      in interchangble manner but actually these are not same.
+    
+      Types of Scope:
+        Scope is place where variable is declared and exact same this is true of function as well because
+        end the end functions are just values which are stored in variables. 
+        Global Scope: 
+           Global scope is for top level code. Variable declared in global scope are accessible everywhere, in
+           all functions and block.
+        Function Scope: Variables are declared inside function. Variables are accessible only inside function
+           not outside. It is also called local scope. If we try to access any variable, declared inside function,
+           outside function then Reference Error will occure. Function declaration, function expression and arrow
+           function all creates  their own scope.
+        Block Scope: From ES6 block also created their own scope. By block we mean every thing inside curly braces.
+           If statement, For loop all creates block scope. Just like function scope variable declared inside block
+           are accesible inside block. Big difference with function scope is block scope are only applied to variable
+           which are declared with let or const. Only 'let' and 'const' variable are restricted to block in which
+           they are created. So let and const variables are block scope. If we will declare a variable with 'var'
+           inside a block then it will be accessble outside block and will be scoped in current function where block
+           is located or Global Scope. Before ES6 we have only Global Scope and Function Scope. Variable declared with
+           'var' care about function not block. From ES6 we have all function are also block scoped in strict mode.
+           Function declared inside a block is accessible within that block. So as per above discussion 'let', 'const',
+           and function declared within a block are block scoped.
 
 
 
 
+ */
+
+/**--------------------------Scope Chain--------------------------------------------- */
+const myName = 'Avnish'; //Global Scope
+//First function is all declared in Global scope
+function first() {
+  //Each function created its own scope.
+  const age = 30; // scope within first()
+  if (age >= 30) {
+    const decade = 3; //const creates variable with block scope so decade is accessible only in if block
+    var millenial = true; /*var does not care about block so it is in first function
+    (nearest function) scope from where it can be accessed 
+    by second function*/
+  }
+  /**Learning**scope chain only works upward neither downward nor sideward */
+
+  function second() {
+    const job = 'Software Developer'; // scope within second()
+    /**Learing** Every child block has access to variables of its parent so second function can access 'age'
+    from first function and since first can access myName from its parent(Global) thus scond can access it from
+    first function. In this way scope chain is created. initially second() will seach for myName in first() function
+    scope, first function contain scope of myName from its parent function(Global)*/
+    console.log(`**Scope Chain**${myName} is a ${age} years old ${job}`);
+    //console.log(`${decade}`); //Reference error will occur because decade is block scope in if block
+    console.log(`${millenial}`);
+  }
+  second();
+}
+first();
+/**--------------------------Scope Chain-End----------------------------------------- */
+
+/**Learning** Scope chain vs Callstack
+
+   There is one execution context for each function in exact order in which they are called
+   and one Global Execution Context. Each execution context will have their own varaible 
+   environment. Refer ScopeChanFlow screenshot.
  */
