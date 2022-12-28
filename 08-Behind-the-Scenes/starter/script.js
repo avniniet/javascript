@@ -233,5 +233,5 @@ first();
 
    There is one execution context for each function in exact order in which they are called
    and one Global Execution Context. Each execution context will have their own varaible 
-   environment. Refer ScopeChanFlow screenshot.
+   environment. Refer ScopeChainFlow screenshot.
  */
