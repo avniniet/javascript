@@ -7,7 +7,7 @@
 6. Symbol
 7. BigInt
 In memory management above are called as primitive types.
-Primitive types are stored in execution context, in which they are declared, 
+Primitive types are stored in execution context of function, in which they are declared, 
 which is executed in call stack. Objects are stored in heap.
  */
 
@@ -54,7 +54,7 @@ value  but we can go in heap and change data in object. */
 friend.age = 27;
 console.log(friend);
 
-/**Learning** Since data in object is changes which is referenced by me1 object point during updating 
+/**Learning** Since data in object is changed which is referenced by me1 object point during updating 
 age  of friend object so me1 object will also print age = 27 */
 console.log(me1); //Both me1 and friend has age 27 although it is changed only for friend
 
@@ -74,3 +74,35 @@ const marriedNeetish = Neetish;
 marriedNeetish.married = true;
 console.log(`Neetish married = ${Neetish.married}`);
 console.log(`Neetish married = ${Neetish.married}`);
+
+/**Learning** Object const/variable stores below line will give error that we are trying to  change an const because
+here we are trying to change reference address from old object address to new object
+address  */
+//marriedNeetish = {};
+
+//Copying Objects
+const bhuwaneshwar = {
+  firstName: 'bhuwaneshwar',
+  lastName: 'pandey',
+  age: 30,
+  married: false,
+  /**Learning** Array is an object behind the scenes. So below array is object within an object  */
+  family: ['Gyaneshwar', 'Avnish'],
+};
+
+/**Learning** bhuwaneshwar object data is copied in bhuwaneshwarCpoy object but other
+has different address in heap so if there is any change in one object there it will not 
+affect the other one. But for nested object like family it will only copy reference so any change in 
+nested object in one object will be reflected in other one so there is only shallow copy instead of 
+deep copy. For deep copy external libraries are used. */
+const bhuwaneshwarCopy = Object.assign({}, bhuwaneshwar);
+bhuwaneshwarCopy.lastName = 'Morrison';
+console.log('bhuwaneshwar lastName', bhuwaneshwar);
+console.log('bhuwaneshwarCopy lastName', bhuwaneshwarCopy);
+
+bhuwaneshwarCopy.family.push('Mary');
+bhuwaneshwarCopy.family.push('John');
+
+/**Learning** after adding family member in family arra */
+console.log('bhuwaneshwar lastName', bhuwaneshwar);
+console.log('bhuwaneshwarCopy lastName', bhuwaneshwarCopy);
